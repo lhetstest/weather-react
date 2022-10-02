@@ -43,11 +43,11 @@ const Weather = (props) => {
                     <div className='row'>
                         <div className='col-9 search'>
                             <input 
-                            type="search" 
-                            placeholder="Enter a city"
-                            className='form-control'
-                            autoFocus="on"
-                            onChange={handleCityChange}
+                                type="search" 
+                                placeholder="Enter a city"
+                                className='form-control'
+                                autoFocus="on"
+                                onChange={handleCityChange}
                             />
                         </div>
                         <div className='col-3'>
