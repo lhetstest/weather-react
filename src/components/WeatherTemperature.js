@@ -13,16 +13,16 @@ const WeatherTemperature = (props) => {
         setUnit("celsius");
     }
     const fahrenheit = () => {
-        return (props.celsius*9/5)+32;
+        return (props.celsius*9)/5+32;
     }
-    if (unit === 'celsius') {
+    if (unit === "celsius") {
         return (
             <div className="WeatherTemperature">
                 <span className="temperature">{Math.round(props.celsius)}</span>
                 <span className="unit">
-                        °C |
+                        °C | 
                     <a href="/" onClick={convertToFahr}>
-                        ℉
+                         ℉
                     </a>
                 </span>
             </div>
@@ -30,12 +30,12 @@ const WeatherTemperature = (props) => {
     } else {
         return (
             <div className="WeatherTemperature">
-                <span className="temperature">{Math.round(fahrenheit)}</span>
+                <span className="temperature">{Math.round(fahrenheit())}</span>
                 <span className="unit">
                     <a href="/" onClick={convertToCels}>
-                        °C
+                        °C 
                     </a>
-                    | ℉
+                     | ℉
                 </span>
             </div>
         );
