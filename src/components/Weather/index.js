@@ -6,8 +6,8 @@ import WeatherInfo from "../WeatherInfo";
 const Weather = (props) => {
     const [weatherData, setWeatherData] = useState({ready: false});
     const [city, setCity] = useState(props.defaultCity);
+
     const handleResponse = (response) => {
-        console.log(response.data);
         setWeatherData({
             ready: true,
             coordinates: response.data.coord,
@@ -20,14 +20,6 @@ const Weather = (props) => {
             date: new Date(response.data.dt * 1000),
         });
     }
-
-    const search = () => {
-        const apikey = "0ea29467c36ab19f0d25f2d3da3d7189";
-        let apiurl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`
-        axios.get(apiurl).then(handleResponse);
-        return "Loading..";
-    }
-
     const handleSubmit = (e) => {
         e.preventDefault();
         search();
@@ -35,6 +27,13 @@ const Weather = (props) => {
 
     const handleCityChange =(e) => {
         setCity(e.target.value);
+    }
+
+    const search = () => {
+        const apikey = "0ea29467c36ab19f0d25f2d3da3d7189";
+        let apiurl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+        axios.get(apiurl).then(handleResponse);
+        return "Loading..";
     }
 
     if(weatherData.ready) {
@@ -63,8 +62,6 @@ const Weather = (props) => {
         search();
         return "Loading ...";
     }
-    
-    
 }
 
 export default Weather;
