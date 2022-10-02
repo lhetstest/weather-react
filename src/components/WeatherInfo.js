@@ -1,5 +1,7 @@
 import React from "react";
 import FormattedData from "./FormattedData";
+import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
 
 const WeatherInfo = (props) => {
     return (
