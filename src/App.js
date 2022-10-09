@@ -10,7 +10,7 @@ function App() {
       </header>
       
       <footer>
-        <a className='App-link' href="https://github.com/lhetstest/weather-react">Code is here</a>
+        <a className='App-link' href="https://github.com/lhetstest/weather-react" rel="noopener noreferrer">Code is here</a>
       </footer>
     </div>
   );
